@@ -1,0 +1,31 @@
+name: handlebars-template.render-dir
+description: renders [handlebars templates](http://handlebarsjs.com) from a directory
+inputs:
+  templates:
+    dir:
+      description: directory containing [handlebars templates](http://handlebarsjs.com)
+  data:
+    object:
+      description: data passed to the 
+outputs:
+  value:
+    string:
+      description: value of the namespace connection string
+version: 1.0.0
+run:
+  container:
+    image: { ref: 'opspecpkgs/handlebars-template.render:1.0.0' }
+    cmd: [node, /cmd.js]
+    files:
+      /cmd.js:
+      /value: $(value)
+    envVars:
+      subscriptionId:
+      loginId:
+      loginSecret:
+      loginTenantId:
+      authRule:
+      namespace:
+      resourceGroup:
+      loginType:
+      authRuleKey:
