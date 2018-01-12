@@ -1,8 +1,8 @@
-[![Build Status](https://travis-ci.org/opspec-pkgs/handlebars-template.render.svg?branch=master)](https://travis-ci.org/opspec-pkgs/handlebars-template.render)
+[![Build Status](https://travis-ci.org/opspec-pkgs/handlebars-template.render-dir.svg?branch=master)](https://travis-ci.org/opspec-pkgs/handlebars-template.render-dir)
 
 # Problem statement
 
-gets an azure servicebus namespace connection string
+renders [handlebars templates](http://handlebarsjs.com) from a directory
 
 # Format
 
@@ -13,20 +13,20 @@ this version of the pkg is in [![opspec 0.1.5](https://img.shields.io/badge/opsp
 ## install
 
 ```shell
-opctl pkg install github.com/opspec-pkgs/handlebars-template.render#1.0.0
+opctl pkg install github.com/opspec-pkgs/handlebars-template.render-dir#1.0.0
 ```
 
 ## run
 
 ```
-opctl run github.com/opspec-pkgs/handlebars-template.render#1.0.0
+opctl run github.com/opspec-pkgs/handlebars-template.render-dir#1.0.0
 ```
 
 ## compose
 
 ```yaml
 op:
-  pkg: { ref: github.com/opspec-pkgs/handlebars-template.render#1.0.0 }
+  pkg: { ref: github.com/opspec-pkgs/handlebars-template.render-dir#1.0.0 }
   inputs:
     subscriptionId:
     loginId:
@@ -48,7 +48,7 @@ op:
 join us on
 [![Slack](https://opspec-slackin.herokuapp.com/badge.svg)](https://opspec-slackin.herokuapp.com/)
 or
-[open an issue](https://github.com/opspec-pkgs/handlebars-template.render/issues)
+[open an issue](https://github.com/opspec-pkgs/handlebars-template.render-dir/issues)
 
 # Releases
 

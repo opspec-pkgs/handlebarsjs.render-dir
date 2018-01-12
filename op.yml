@@ -1,31 +1,37 @@
-name: handlebars-template.render-dir
-description: renders [handlebars templates](http://handlebarsjs.com) from a directory
+name: github.com/opspec-pkgs/handlebars-template.render-dir
+description: renders a directory of [handlebars](http://handlebarsjs.com) templates
 inputs:
-  templates:
-    dir:
-      description: directory containing [handlebars templates](http://handlebarsjs.com)
   data:
     object:
-      description: data passed to the 
+      description: data used to hydrate the templates
+      default: { greeting: hello, user: chris }
+  partials:
+    dir:
+      description: directory of [handlebars partials](http://handlebarsjs.com/partials.html) to register
+      default: /example
+  templates:
+    dir:
+      description: directory of [handlebars](http://handlebarsjs.com) templates
+      default: /example
 outputs:
-  value:
-    string:
-      description: value of the namespace connection string
+  result:
+    dir:
+      description: result of replacing variables in templates
 version: 1.0.0
 run:
-  container:
-    image: { ref: 'opspecpkgs/handlebars-template.render:1.0.0' }
-    cmd: [node, /cmd.js]
-    files:
-      /cmd.js:
-      /value: $(value)
-    envVars:
-      subscriptionId:
-      loginId:
-      loginSecret:
-      loginTenantId:
-      authRule:
-      namespace:
-      resourceGroup:
-      loginType:
-      authRuleKey:
+  serial:
+  - container:
+      image: { ref: 'opspecpkgs/handlebars-template.render-dir:1.0.0' }
+      cmd: [node, /cmd.js]
+      dirs:
+        /partials: $(partials)
+        /templates: $(templates)
+        /result: $(result)
+      files:
+        /data.json: $(data)
+        /cmd.js:
+  - container:
+      image: { ref: alpine }
+      dirs:
+        /result: $(result)
+      cmd: [sh, -ce, cat /result/subdir/index.hbs]
