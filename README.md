@@ -2,7 +2,7 @@
 
 # Problem statement
 
-renders [handlebars templates](http://handlebarsjs.com) from a directory
+renders a directory of [handlebars](http://handlebarsjs.com) templates
 
 # Format
 
