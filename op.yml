@@ -4,34 +4,34 @@ inputs:
   data:
     object:
       description: data used to hydrate the templates
-      default: { greeting: hello, user: chris }
+      default: { salutation: hello, user: chris }
   partials:
     dir:
-      description: directory of [handlebars partials](http://handlebarsjs.com/partials.html) to register
-      default: /example
+      description: >
+        directory of [handlebars partials](http://handlebarsjs.com/partials.html) to register.
+        Contents will be recursively registered by path (less file extension) relative to root
+        See [example/partials](example/partials) for examples
+      default: /example/partials
   templates:
     dir:
-      description: directory of [handlebars](http://handlebarsjs.com) templates
-      default: /example
+      description: >
+        directory of [handlebars](http://handlebarsjs.com) templates to render. 
+        Contents will be recursively rendered & saved to result less any '.hbs' file extension.
+        See [example/templates](example/templates) for examples
+      default: /example/templates
 outputs:
   result:
     dir:
-      description: result of replacing variables in templates
+      description: result of rendering all templates
 version: 1.0.0
 run:
-  serial:
-  - container:
-      image: { ref: 'opspecpkgs/handlebars-template.render-dir:1.0.0' }
-      cmd: [node, /cmd.js]
-      dirs:
-        /partials: $(partials)
-        /templates: $(templates)
-        /result: $(result)
-      files:
-        /data.json: $(data)
-        /cmd.js:
-  - container:
-      image: { ref: alpine }
-      dirs:
-        /result: $(result)
-      cmd: [sh, -ce, cat /result/subdir/index.hbs]
+  container:
+    image: { ref: 'opspecpkgs/handlebars-template.render-dir:1.0.0' }
+    cmd: [node, /cmd.js]
+    dirs:
+      /partials: $(partials)
+      /templates: $(templates)
+      /result: $(result)
+    files:
+      /data.json: $(data)
+      /cmd.js:

@@ -28,19 +28,13 @@ opctl run github.com/opspec-pkgs/handlebars-template.render-dir#1.0.0
 op:
   pkg: { ref: github.com/opspec-pkgs/handlebars-template.render-dir#1.0.0 }
   inputs:
-    subscriptionId:
-    loginId:
-    loginSecret:
-    loginTenantId:
-    namespace:
-    resourceGroup:
     # begin optional args
-    authRule:
-    authRuleKey:
-    loginType:
+    data:
+    templates:
+    partials:
     # end optional args
   outputs:
-    value:
+    result:
 ```
 
 # Support

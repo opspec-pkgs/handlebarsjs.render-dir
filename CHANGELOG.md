@@ -5,5 +5,5 @@ All notable changes will be documented in this file in accordance with
 
 ## \[Unreleased]
 
-## \[1.0.0] - 2018-01-10
+## \[1.0.0] - 2018-01-12
 
