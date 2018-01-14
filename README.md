@@ -30,8 +30,9 @@ op:
   inputs:
     # begin optional args
     data:
-    templates:
+    helpers:
     partials:
+    templates:
     # end optional args
   outputs:
     result:

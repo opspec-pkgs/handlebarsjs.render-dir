@@ -5,6 +5,13 @@ inputs:
     object:
       description: data used to hydrate the templates
       default: { salutation: hello, user: chris }
+  helpers:
+    dir:
+      description: >
+        directory of [handlebars helpers](http://handlebarsjs.com/#helpers) to register.
+        Contents will be recursively registered by path (less file extension) relative to root
+        See [example/helpers](example/helpers) for examples
+      default: /example/helpers
   partials:
     dir:
       description: >
@@ -29,6 +36,7 @@ run:
     image: { ref: 'opspecpkgs/handlebars-template.render-dir:1.0.0' }
     cmd: [node, /cmd.js]
     dirs:
+      /helpers: $(helpers)
       /partials: $(partials)
       /templates: $(templates)
       /result: $(result)
