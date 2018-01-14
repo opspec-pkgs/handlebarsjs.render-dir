@@ -21,5 +21,5 @@ run:
         pkg: { ref: github.com/opspec-pkgs/docker.image.build#2.0.0 }
         inputs:
           dockerfile: $(/Dockerfile)
-          imageName: 'opspecpkgs/handlebars-template.render-dir:$(version)'
+          imageName: 'opspecpkgs/handlebarsjs.render-dir:$(version)'
         outputs: { imageTar }

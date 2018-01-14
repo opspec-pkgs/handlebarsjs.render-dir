@@ -1,4 +1,4 @@
-name: github.com/opspec-pkgs/handlebars-template.render-dir
+name: github.com/opspec-pkgs/handlebarsjs.render-dir
 description: renders a directory of [handlebars](http://handlebarsjs.com) templates
 inputs:
   data:
@@ -33,7 +33,7 @@ outputs:
 version: 1.0.0
 run:
   container:
-    image: { ref: 'opspecpkgs/handlebars-template.render-dir:1.0.0' }
+    image: { ref: 'opspecpkgs/handlebarsjs.render-dir:1.0.0' }
     cmd: [node, /cmd.js]
     dirs:
       /helpers: $(helpers)
