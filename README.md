@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/opspec-pkgs/handlebarsjs.render-dir.svg?branch=master)](https://travis-ci.org/opspec-pkgs/handlebarsjs.render-dir)
+[![Build Status](https://github.com/opspec-pkgs/handlebarsjs.render-dir/workflows/build/badge.svg?branch=main)](https://github.com/opspec-pkgs/handlebarsjs.render-dir/actions?query=workflow%3Abuild+branch%3Amain)
 
 <img src="icon.svg" alt="icon" height="100px">
 
@@ -6,16 +6,12 @@
 
 renders a directory of [handlebars](http://handlebarsjs.com) templates
 
-# Format
-
-this version of the pkg is in [![opspec 0.1.5](https://img.shields.io/badge/opspec-0.1.5-brightgreen.svg?colorA=6b6b6b&colorB=fc16be)](https://opspec.io/0.1.5/packages.html) format
-
 # Example usage
 
-## Install
+## Visualize
 
 ```shell
-opctl pkg install github.com/opspec-pkgs/handlebarsjs.render-dir#1.0.0
+opctl ui github.com/opspec-pkgs/handlebarsjs.render-dir#1.0.0
 ```
 
 ## Run
@@ -28,13 +24,13 @@ opctl run github.com/opspec-pkgs/handlebarsjs.render-dir#1.0.0
 
 ```yaml
 op:
-  pkg: { ref: github.com/opspec-pkgs/handlebarsjs.render-dir#1.0.0 }
-  inputs:
-    # params w/ default
-    data:
-    helpers:
-    partials:
-    templates:
+  ref: github.com/opspec-pkgs/handlebarsjs.render-dir#1.0.0
+  ## uncomment to override defaults
+  # inputs:
+  #   data: [object Object]
+  #   helpers: /example/helpers
+  #   partials: /example/partials
+  #   templates: /example/templates
   outputs:
     result:
 ```
@@ -42,7 +38,7 @@ op:
 # Support
 
 join us on
-[![Slack](https://opspec-slackin.herokuapp.com/badge.svg)](https://opspec-slackin.herokuapp.com/)
+[![Slack](https://img.shields.io/badge/slack-opctl-E01563.svg)](https://join.slack.com/t/opctl/shared_invite/zt-51zodvjn-Ul_UXfkhqYLWZPQTvNPp5w)
 or
 [open an issue](https://github.com/opspec-pkgs/handlebarsjs.render-dir/issues)
 
@@ -56,4 +52,4 @@ and [tagged](https://git-scm.com/book/en/v2/Git-Basics-Tagging); see
 # Contributing
 
 see
-[project/CONTRIBUTING.md](https://github.com/opspec-pkgs/project/blob/master/CONTRIBUTING.md)
+[project/CONTRIBUTING.md](https://github.com/opspec-pkgs/project/blob/main/CONTRIBUTING.md)
